@@ -58,7 +58,8 @@ void loop()
   val5 = digitalRead(sensor5); //Read the sensor  
  //if(val0 == LOW){ //when magnetic field is detected, turn led on 
  // if (val0 == LOW || val1 == LOW || val2 == LOW || val3 == LOW|| val4 == LOW|| val5 == LOW) {
- if (val0 == LOW || val1 == LOW) {
+ // determine if any of the switches are closed and send send signal.
+  if (val0 == LOW || val1 == LOW || val2 == LOW || val3 == LOW || val4 == LOW|| val5 == LOW) {
 		digitalWrite(led, HIGH);
       SentMessage[0] = 111;
       radio.write(SentMessage, 1);      // Send pressed data to NRF24L01
